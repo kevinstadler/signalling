@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Experiment</title>
+    <script type="text/javascript" src="websocket.js"></script>
+    <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 5% 15%;
+      font-size: 110%;
+      overflow: hidden;
+    }
+    circle,line {
+      stroke: black;
+      stroke-width: 20px;
+      fill: white;
+    }
+    .stimulus {
+      font-size: 18vh;
+      margin: 0;
+    }
+    .option {
+      font-size: 18vh;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 5%;
+      width: 25vh;
+      height: 25vh;
+      border: 5px solid #FFFFFF;
+    }
+    .option.response:hover {
+      border-color: #000000;
+    }
+    </style>
+  </head>
+  <body onbeforeunload="if(socket.readyState==1)return('You have not finished the experiment. If you abort now you will not be eligible to participate another time. Are you sure you want to leave the experiment?')" onunload="if (socket.readyState==1)socket.close(3001)">
+    <div id="content" style="text-align:center">Connecting to server..</div>
+  </body>
+</html>
